@@ -19,7 +19,7 @@
 /var/*
 !/var/.gitkeep
 !/var/classes/
-/var/classes/DataObject
+
 
 !/var/config
 /var/config/system.yml
