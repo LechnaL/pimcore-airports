@@ -18,7 +18,9 @@
 
 1. Go into `Settings` -> `Data Models` -> `bulk import`.
 
-2. Inside main project folder use file `bulk_export.json` to import all required data models.
+2. Inside main project folder open `models` folder use file `bulk_export.json` to import all required data models.
+
+* Alternatively you can import data models separately
 
 ## Import Assets
 
@@ -28,4 +30,12 @@
 
 ## Import configuration
 
-1. Inside datahub use `import` button next to `add configuration` then import all json files from `datahub_presets` folder.
+1. Inside datahub use `import` button next to `add configuration` then import all JSON files from `datahub_presets` folder.
+
+## Start import
+
+* It is reccomended to first import the `airports` so model relations can be properly established.
+
+1. To start importing the data you need to manualy start the data import from datahub menu, choose desired import then go into `execution` label and click `start`.
+
+2. If everything was properly set, the desired data should be importing into the specified directory.
