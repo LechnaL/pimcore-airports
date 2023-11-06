@@ -14,24 +14,6 @@
 
 6. Open pimcore admin panel in Your browser <http://localhost:8080/admin> and log in using credentials ``admin:admin``.
 
-## Import models
-
-1. Go into `Settings` -> `Data Models` -> `bulk import`.
-
-2. Inside main project folder open `models` folder use file `bulk_export.json` to import all required data models.
-
-* Alternatively you can import data models separately
-
-## Import Assets
-
-1. In project directory find `/import` folder.
-
-2. Drag and drop it into `Assets/Home` directory in your GUI.
-
-## Import configuration
-
-1. Inside datahub use `import` button next to `add configuration` then import all JSON files from `datahub_presets` folder.
-
 ## Start import
 
 * It is reccomended to first import the `airports` so model relations can be properly established.
