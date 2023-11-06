@@ -1,0 +1,208 @@
+{
+    "type": "dataImporterDataObject",
+    "path": "",
+    "name": "frequencies",
+    "group": "",
+    "configuration": {
+        "general": {
+            "active": true,
+            "type": "dataImporterDataObject",
+            "name": "frequencies",
+            "description": "frequencies data",
+            "group": "",
+            "path": null
+        },
+        "loaderConfig": {
+            "type": "asset",
+            "settings": {
+                "assetPath": "\/import\/airport-frequencies.csv"
+            }
+        },
+        "interpreterConfig": {
+            "type": "csv",
+            "settings": {
+                "skipFirstRow": true,
+                "delimiter": ",",
+                "enclosure": "\"",
+                "escape": "\\"
+            }
+        },
+        "resolverConfig": {
+            "elementType": "dataObject",
+            "dataObjectClassId": "2",
+            "loadingStrategy": {
+                "type": "notLoad"
+            },
+            "createLocationStrategy": {
+                "type": "staticPath",
+                "settings": {
+                    "path": "\/frequencies"
+                }
+            },
+            "locationUpdateStrategy": {
+                "type": "noChange"
+            },
+            "publishingStrategy": {
+                "type": "noChangePublishNew"
+            }
+        },
+        "processingConfig": {
+            "executionType": "sequential",
+            "idDataIndex": "0",
+            "doDeltaCheck": true,
+            "cleanup": {
+                "strategy": "unpublish"
+            }
+        },
+        "mappingConfig": [
+            {
+                "label": "id [0]",
+                "dataSourceIndex": [
+                    "0"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "key",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "airport_ref [1]",
+                "dataSourceIndex": [
+                    "1"
+                ],
+                "settings": {
+                    "loadStrategy": "id",
+                    "attributeDataObjectClassId": "",
+                    "attributeName": "",
+                    "attributeLanguage": ""
+                },
+                "transformationResultType": "dataObject",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "airport_ref",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "settings": {
+                            "loadStrategy": "id",
+                            "attributeDataObjectClassId": "",
+                            "attributeName": "",
+                            "attributeLanguage": ""
+                        },
+                        "type": "loadDataObject"
+                    }
+                ]
+            },
+            {
+                "label": "airport_ident [2]",
+                "dataSourceIndex": [
+                    "2"
+                ],
+                "settings": {
+                    "loadStrategy": "attribute",
+                    "attributeDataObjectClassId": "1",
+                    "attributeName": "ident",
+                    "attributeLanguage": ""
+                },
+                "transformationResultType": "dataObject",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "airport_ident",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "settings": {
+                            "loadStrategy": "attribute",
+                            "attributeDataObjectClassId": "1",
+                            "attributeName": "ident",
+                            "attributeLanguage": ""
+                        },
+                        "type": "loadDataObject"
+                    }
+                ]
+            },
+            {
+                "label": "type [3]",
+                "dataSourceIndex": [
+                    "3"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "freq_type",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "description [4]",
+                "dataSourceIndex": [
+                    "4"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "description",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "frequency_mhz [5]",
+                "dataSourceIndex": [
+                    "5"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "frequency_mhz",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            }
+        ],
+        "executionConfig": {
+            "scheduleType": "job",
+            "cronDefinition": "",
+            "scheduledAt": ""
+        },
+        "permissions": {
+            "user": [],
+            "role": []
+        },
+        "workspaces": []
+    }
+}

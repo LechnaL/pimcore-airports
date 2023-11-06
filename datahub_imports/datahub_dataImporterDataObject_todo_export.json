@@ -1,0 +1,141 @@
+{
+    "type": "dataImporterDataObject",
+    "path": "",
+    "name": "todo",
+    "group": "",
+    "configuration": {
+        "general": {
+            "active": true,
+            "type": "dataImporterDataObject",
+            "name": "todo",
+            "description": "todo - json api",
+            "group": "",
+            "path": null
+        },
+        "loaderConfig": {
+            "type": "http",
+            "settings": {
+                "schema": "https:\/\/",
+                "url": "jsonplaceholder.typicode.com\/todos\/"
+            }
+        },
+        "interpreterConfig": {
+            "type": "json"
+        },
+        "resolverConfig": {
+            "elementType": "dataObject",
+            "dataObjectClassId": "4",
+            "loadingStrategy": {
+                "type": "notLoad"
+            },
+            "createLocationStrategy": {
+                "type": "staticPath",
+                "settings": {
+                    "path": "\/todo"
+                }
+            },
+            "locationUpdateStrategy": {
+                "type": "noChange"
+            },
+            "publishingStrategy": {
+                "type": "noChangePublishNew"
+            }
+        },
+        "processingConfig": {
+            "executionType": "parallel",
+            "idDataIndex": "id",
+            "doDeltaCheck": true,
+            "cleanup": {
+                "strategy": "unpublish"
+            }
+        },
+        "mappingConfig": [
+            {
+                "label": "userId",
+                "dataSourceIndex": [
+                    "userId"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "user_id",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "id",
+                "dataSourceIndex": [
+                    "id"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "key",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "title",
+                "dataSourceIndex": [
+                    "title"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "title",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "completed",
+                "dataSourceIndex": [
+                    "completed"
+                ],
+                "transformationResultType": "boolean",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "completed",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "boolean"
+                    }
+                ]
+            }
+        ],
+        "executionConfig": {
+            "scheduleType": "recurring",
+            "cronDefinition": "*\/15 * * * *",
+            "scheduledAt": ""
+        },
+        "permissions": {
+            "user": [],
+            "role": []
+        },
+        "workspaces": []
+    }
+}

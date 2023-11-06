@@ -1,0 +1,490 @@
+{
+    "type": "dataImporterDataObject",
+    "path": "",
+    "name": "runways",
+    "group": "",
+    "configuration": {
+        "general": {
+            "active": true,
+            "type": "dataImporterDataObject",
+            "name": "runways",
+            "description": "",
+            "group": "",
+            "path": null
+        },
+        "loaderConfig": {
+            "type": "asset",
+            "settings": {
+                "assetPath": "\/import\/runways_Im.csv"
+            }
+        },
+        "interpreterConfig": {
+            "type": "csv",
+            "settings": {
+                "skipFirstRow": true,
+                "delimiter": ",",
+                "enclosure": "\"",
+                "escape": "\\"
+            }
+        },
+        "resolverConfig": {
+            "elementType": "dataObject",
+            "dataObjectClassId": "3",
+            "loadingStrategy": {
+                "type": "notLoad"
+            },
+            "createLocationStrategy": {
+                "type": "staticPath",
+                "settings": {
+                    "path": "\/runways"
+                }
+            },
+            "locationUpdateStrategy": {
+                "type": "noChange"
+            },
+            "publishingStrategy": {
+                "type": "noChangePublishNew"
+            }
+        },
+        "processingConfig": {
+            "executionType": "sequential",
+            "idDataIndex": "0",
+            "doDeltaCheck": true,
+            "cleanup": {
+                "strategy": "unpublish"
+            }
+        },
+        "mappingConfig": [
+            {
+                "label": "id [0]",
+                "dataSourceIndex": [
+                    "0"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "key",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "airport_ref [1]",
+                "dataSourceIndex": [
+                    "1"
+                ],
+                "settings": {
+                    "loadStrategy": "id",
+                    "attributeDataObjectClassId": "",
+                    "attributeName": "",
+                    "attributeLanguage": ""
+                },
+                "transformationResultType": "dataObject",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "airport_ref",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "settings": {
+                            "loadStrategy": "id",
+                            "attributeDataObjectClassId": "",
+                            "attributeName": "",
+                            "attributeLanguage": ""
+                        },
+                        "type": "loadDataObject"
+                    }
+                ]
+            },
+            {
+                "label": "airport_ident [2]",
+                "dataSourceIndex": [
+                    "2"
+                ],
+                "settings": {
+                    "loadStrategy": "attribute",
+                    "attributeDataObjectClassId": "1",
+                    "attributeName": "ident",
+                    "attributeLanguage": ""
+                },
+                "transformationResultType": "dataObject",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "airport_ident",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "settings": {
+                            "loadStrategy": "attribute",
+                            "attributeDataObjectClassId": "1",
+                            "attributeName": "ident",
+                            "attributeLanguage": ""
+                        },
+                        "type": "loadDataObject"
+                    }
+                ]
+            },
+            {
+                "label": "length_ft [3]",
+                "dataSourceIndex": [
+                    "3"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "length_ft",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "width_ft [4]",
+                "dataSourceIndex": [
+                    "4"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "width_ft",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "surface [5]",
+                "dataSourceIndex": [
+                    "5"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "surface",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "lighted [6]",
+                "dataSourceIndex": [
+                    "6"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "lighted",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "closed [7]",
+                "dataSourceIndex": [
+                    "7"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "closed",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "le_ident [8]",
+                "dataSourceIndex": [
+                    "8"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "le_ident",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "le_latitude_deg [9]",
+                "dataSourceIndex": [
+                    "9"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "le_latitude_deg",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "le_longitude_deg [10]",
+                "dataSourceIndex": [
+                    "10"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "le_longitude_deg",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "le_elevation_ft [11]",
+                "dataSourceIndex": [
+                    "11"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "le_elevation_ft",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "le_heading_degT [12]",
+                "dataSourceIndex": [
+                    "12"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "le_heading_degT",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "le_displaced_threshold_ft [13]",
+                "dataSourceIndex": [
+                    "13"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "le_displaced_threshold_ft",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "he_ident [14]",
+                "dataSourceIndex": [
+                    "14"
+                ],
+                "transformationResultType": "default",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "he_ident",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": []
+            },
+            {
+                "label": "he_latitude_deg [15]",
+                "dataSourceIndex": [
+                    "15"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "he_latitude_deg",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "he_longitude_deg [16]",
+                "dataSourceIndex": [
+                    "16"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "he_longitude_deg",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "he_elevation_ft [17]",
+                "dataSourceIndex": [
+                    "17"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "he_elevation_ft",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "he_heading_degT [18]",
+                "dataSourceIndex": [
+                    "18"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "he_heading_degT",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            },
+            {
+                "label": "he_displaced_threshold_ft [19]",
+                "dataSourceIndex": [
+                    "19"
+                ],
+                "transformationResultType": "numeric",
+                "dataTarget": {
+                    "type": "direct",
+                    "settings": {
+                        "fieldName": "he_displaced_threshold_ft",
+                        "language": "",
+                        "writeIfTargetIsNotEmpty": true,
+                        "writeIfSourceIsEmpty": true
+                    }
+                },
+                "transformationPipeline": [
+                    {
+                        "type": "numeric"
+                    }
+                ]
+            }
+        ],
+        "executionConfig": {
+            "scheduleType": "job",
+            "cronDefinition": "",
+            "scheduledAt": ""
+        },
+        "permissions": {
+            "user": [],
+            "role": []
+        },
+        "workspaces": []
+    }
+}
