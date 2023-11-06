@@ -47,7 +47,6 @@ services:
             PIMCORE_INSTALL_MYSQL_PORT: 3306
             PIMCORE_INSTALL_MYSQL_HOST_SOCKET: db
             PIMCORE_INSTALL_MYSQL_DATABASE: pimcore
-            PHP_MEMORY_LIMIT: 2G
         depends_on:
             db:
                 condition: service_healthy
@@ -82,6 +81,7 @@ services:
             PIMCORE_INSTALL_ADMIN_USERNAME: pimcore
             PIMCORE_INSTALL_ADMIN_PASSWORD: pimcore
             PIMCORE_INSTALL_MYSQL_HOST_SOCKET: test-db
+            PHP_MEMORY_LIMIT: 4G
         depends_on:
             test-db:
                 condition: service_healthy

@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: 'frequencies data'
                 group: ''
                 path: null
-                modificationDate: 1699287987
+                modificationDate: 1699294389
                 createDate: 1699287987
             loaderConfig:
                 type: asset

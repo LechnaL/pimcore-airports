@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: 'airports data import'
                 group: ''
                 path: null
-                modificationDate: 1699287073
+                modificationDate: 1699294398
                 createDate: 1699287073
             loaderConfig:
                 type: asset
@@ -35,12 +35,12 @@ pimcore_data_hub:
                 publishingStrategy:
                     type: noChangePublishNew
             processingConfig:
-                executionType: parallel
+                executionType: sequential
                 idDataIndex: '0'
                 doDeltaCheck: true
                 cleanup:
                     doCleanup: true
-                    strategy: delete
+                    strategy: unpublish
             mappingConfig:
                 -
                     label: 'id [0]'

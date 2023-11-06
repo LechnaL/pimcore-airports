@@ -8,7 +8,7 @@ pimcore_data_hub:
                 description: 'todo - json api'
                 group: ''
                 path: null
-                modificationDate: 1699288050
+                modificationDate: 1699294395
                 createDate: 1699288050
             loaderConfig:
                 type: http
@@ -31,7 +31,7 @@ pimcore_data_hub:
                 publishingStrategy:
                     type: noChangePublishNew
             processingConfig:
-                executionType: parallel
+                executionType: sequential
                 idDataIndex: id
                 doDeltaCheck: true
                 cleanup:
